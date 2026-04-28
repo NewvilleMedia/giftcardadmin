@@ -225,7 +225,7 @@ export default function DashboardPage() {
             : MOCK_USER_GROWTH_CHART;
 
           setData({
-            stats: result,
+            stats: { ...MOCK_STATS, ...result },
             revenueChart,
             userGrowthChart,
             recentTransactions: result.recentTransactions || MOCK_TRANSACTIONS,

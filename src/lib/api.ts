@@ -182,6 +182,19 @@ export interface DashboardStats {
   revenueByDay?: { date: string; amount: number }[];
 }
 
+interface BackendDashboardStats {
+  users?: { total?: number; active?: number };
+  businesses?: { total?: number };
+  giftCards?: { total?: number };
+  purchases?: { total?: number };
+  subscriptions?: { active?: number };
+  revenue?: {
+    total?: number;
+    transactions?: number;
+    monthly?: Array<{ month?: string; date?: string; amount?: number; total?: number }>;
+  };
+}
+
 export interface PaymentMethod {
   id: string;
   brand: string;
@@ -314,8 +327,21 @@ class ApiClient {
   // ===== Dashboard =====
 
   async getDashboard(): Promise<DashboardStats> {
-    const response = await this.get<DashboardStats>("/admin/dashboard");
-    return this.unwrap(response);
+    const response = await this.get<{ stats?: BackendDashboardStats } | DashboardStats>("/admin/dashboard");
+    const raw = this.unwrap(response) as { stats?: BackendDashboardStats } & Partial<DashboardStats>;
+    const s = raw.stats;
+    if (!s) {
+      return raw as DashboardStats;
+    }
+    return {
+      totalUsers: s.users?.total ?? 0,
+      totalBusinesses: s.businesses?.total ?? 0,
+      totalTransactions: s.purchases?.total ?? 0,
+      totalRevenue: s.revenue?.total ?? 0,
+      activeGiftCards: s.giftCards?.total ?? 0,
+      activeCampaigns: s.subscriptions?.active ?? 0,
+      revenueByDay: (s.revenue?.monthly ?? []).map((m) => ({ date: m.month ?? m.date ?? "", amount: m.amount ?? m.total ?? 0 })),
+    };
   }
 
   // ===== Users =====
