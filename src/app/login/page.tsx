@@ -153,7 +153,7 @@ export default function LoginPage() {
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="flex w-full flex-col items-center justify-center px-6 py-12 lg:w-1/2 xl:w-[45%] bg-gray-50"
+        className="flex w-full flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12 lg:w-1/2 xl:w-[45%] bg-gray-50"
       >
         <div className="w-full max-w-md">
           {/* Mobile logo */}

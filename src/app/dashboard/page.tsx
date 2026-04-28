@@ -165,7 +165,7 @@ function StatCard({ title, value, change, icon, index }: StatCardProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.4 }}
     >
-      <Card className="relative overflow-hidden transition-shadow hover:shadow-md p-6">
+      <Card className="relative overflow-hidden transition-shadow hover:shadow-md p-4 sm:p-6">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-sm font-medium text-gray-500">{title}</p>
@@ -620,7 +620,7 @@ export default function DashboardPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.85 + i * 0.08, duration: 0.4 }}
             >
-              <Card className="transition-shadow hover:shadow-md p-6">
+              <Card className="transition-shadow hover:shadow-md p-4 sm:p-6">
                 <div className="flex items-center gap-4">
                   <div
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg ${item.bg}`}

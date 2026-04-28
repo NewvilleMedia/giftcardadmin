@@ -366,7 +366,7 @@ function EditUserModal({
   return (
     <Modal open={open} onClose={onClose} title="Edit User">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Input
             label="First Name"
             value={firstName}
@@ -560,7 +560,7 @@ function Pagination({
   }
 
   return (
-    <div className="flex items-center justify-between border-t border-gray-200 px-6 py-4">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-200 px-4 sm:px-6 py-4">
       <Button
         variant="secondary"
         size="sm"
@@ -784,7 +784,7 @@ export default function UsersPage() {
       {/* Filters + Table Card */}
       <Card>
         {/* Filters bar */}
-        <div className="flex flex-col gap-4 border-b border-gray-100 px-6 py-4 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-4 border-b border-gray-100 px-4 sm:px-6 py-4 sm:flex-row sm:items-center">
           <div className="flex-1">
             <Input
               placeholder="Search by name or email..."
@@ -793,7 +793,7 @@ export default function UsersPage() {
               icon={<Search className="h-4 w-4" />}
             />
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <select
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}

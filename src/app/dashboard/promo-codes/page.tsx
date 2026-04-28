@@ -501,7 +501,7 @@ export default function PromoCodesPage() {
       </div>
 
       {/* Discount Type & Value */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="mb-1.5 block text-sm font-medium text-gray-700">Discount Type</label>
           <select
@@ -538,7 +538,7 @@ export default function PromoCodesPage() {
       />
 
       {/* Usage Limits */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Input
           label="Usage Limit (optional)"
           type="number"
@@ -569,7 +569,7 @@ export default function PromoCodesPage() {
       />
 
       {/* Dates */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Input
           label="Start Date"
           type="datetime-local"
@@ -741,7 +741,7 @@ export default function PromoCodesPage() {
             />
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {/* Include Expired Toggle */}
             <label className="flex cursor-pointer items-center gap-2">
               <button
@@ -939,7 +939,7 @@ export default function PromoCodesPage() {
 
         {/* ---- Pagination ---- */}
         {!loading && promoCodes.length > 0 && (
-          <div className="flex items-center justify-between border-t border-gray-200 bg-gray-50 px-6 py-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-200 bg-gray-50 px-4 sm:px-6 py-3">
             <p className="text-sm text-gray-500">
               Page <span className="font-medium">{page}</span> of{" "}
               <span className="font-medium">{totalPages}</span>{" "}

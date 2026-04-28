@@ -827,7 +827,7 @@ export default function TransactionsPage() {
 
           {/* Pagination */}
           {!loading && transactions.length > 0 && (
-            <div className="flex items-center justify-between border-t border-gray-200 bg-white px-6 py-3">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-200 bg-white px-4 sm:px-6 py-3">
               <p className="text-sm text-gray-500">
                 Showing{" "}
                 <span className="font-medium">{(page - 1) * limit + 1}</span>
@@ -930,7 +930,7 @@ export default function TransactionsPage() {
             </div>
 
             {/* Details grid */}
-            <div className="grid grid-cols-2 gap-4 rounded-lg border border-gray-200 p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 rounded-lg border border-gray-200 p-4">
               {/* User */}
               <div>
                 <p className="text-xs text-gray-500">User</p>
@@ -1077,7 +1077,7 @@ export default function TransactionsPage() {
             </div>
 
             {/* Transaction info */}
-            <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-xs text-gray-500">User</p>
                 <p className="font-medium text-gray-900">

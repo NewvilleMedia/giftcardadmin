@@ -749,7 +749,7 @@ export default function GiftCardsPage() {
 
           {/* Pagination */}
           {!loading && giftCards.length > 0 && (
-            <div className="flex items-center justify-between border-t border-gray-200 bg-white px-6 py-3">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-200 bg-white px-4 sm:px-6 py-3">
               <p className="text-sm text-gray-500">
                 Showing{" "}
                 <span className="font-medium">{(page - 1) * limit + 1}</span>
@@ -838,7 +838,7 @@ export default function GiftCardsPage() {
                 className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-gray-700">
                   Category
@@ -876,7 +876,7 @@ export default function GiftCardsPage() {
                 placeholder="10, 25, 50, 100"
               />
             ) : (
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input
                   label="Min Amount"
                   type="number"

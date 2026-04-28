@@ -382,13 +382,11 @@ export default function SettingsPage() {
       transition={{ duration: 0.4 }}
       className="space-y-6"
     >
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
-          <p className="mt-1 text-sm text-gray-500">
-            Manage platform configuration and system preferences.
-          </p>
-        </div>
+      <div>
+        <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
+        <p className="mt-1 text-sm text-gray-500">
+          Manage platform configuration and system preferences.
+        </p>
       </div>
 
       <AnimatePresence>
@@ -397,15 +395,15 @@ export default function SettingsPage() {
         )}
       </AnimatePresence>
 
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-6">
         {/* Tab Navigation */}
-        <div className="w-56 shrink-0">
-          <nav className="space-y-1">
+        <div className="md:w-56 shrink-0">
+          <nav className="flex md:flex-col gap-1 overflow-x-auto pb-2 md:pb-0 -mx-1 px-1">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                className={`flex whitespace-nowrap items-center gap-2 md:gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                   activeTab === tab.id
                     ? "bg-indigo-50 text-indigo-700"
                     : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
@@ -539,7 +537,7 @@ export default function SettingsPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-5">
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="mb-1.5 block text-sm font-medium text-gray-700">
                           Max Login Attempts
@@ -625,7 +623,7 @@ export default function SettingsPage() {
                       <h4 className="text-sm font-medium text-gray-900 mb-3">
                         Rate Limiting Configuration
                       </h4>
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <Input
                           label="Requests per Window"
                           type="number"
@@ -867,7 +865,7 @@ export default function SettingsPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4">
                       <div>
                         <p className="text-sm font-medium text-gray-900">
                           Initialize Settings
@@ -886,7 +884,7 @@ export default function SettingsPage() {
                         Initialize
                       </Button>
                     </div>
-                    <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4">
                       <div>
                         <p className="text-sm font-medium text-gray-900">
                           Sync Gift Cards
@@ -905,7 +903,7 @@ export default function SettingsPage() {
                         Sync Cards
                       </Button>
                     </div>
-                    <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4">
                       <div>
                         <p className="text-sm font-medium text-gray-900">
                           Clear Old Notifications
@@ -917,7 +915,7 @@ export default function SettingsPage() {
                       </div>
                       <Badge variant="green">Automatic</Badge>
                     </div>
-                    <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-gray-50 p-4">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 rounded-lg border border-gray-200 bg-gray-50 p-4">
                       <div>
                         <p className="text-sm font-medium text-gray-900">
                           System Health
@@ -1002,7 +1000,7 @@ export default function SettingsPage() {
               className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 resize-none"
             />
           </div>
-          <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-gray-100 pt-4">
             <div className="flex items-center gap-2">
               <Users className="h-4 w-4 text-gray-400" />
               <span className="text-sm text-gray-500">

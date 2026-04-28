@@ -481,7 +481,7 @@ function VerifyBusinessModal({
         </div>
 
         <div className="rounded-lg border border-gray-100 p-4">
-          <div className="grid grid-cols-2 gap-3 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
             <div>
               <p className="text-xs text-gray-400 uppercase tracking-wider">Industry</p>
               <p className="text-gray-900">{industryLabels[business.industry ?? ""] || business.industry || "N/A"}</p>
@@ -626,7 +626,7 @@ function PaginationControl({
   }
 
   return (
-    <div className="flex items-center justify-between border-t border-gray-200 px-6 py-4">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-200 px-4 sm:px-6 py-4">
       <Button
         variant="secondary"
         size="sm"
@@ -838,7 +838,7 @@ export default function BusinessesPage() {
       {/* Filters + Table Card */}
       <Card>
         {/* Filters bar */}
-        <div className="flex flex-col gap-4 border-b border-gray-100 px-6 py-4 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-4 border-b border-gray-100 px-4 sm:px-6 py-4 sm:flex-row sm:items-center">
           <div className="flex-1">
             <Input
               placeholder="Search by business name..."
@@ -847,7 +847,7 @@ export default function BusinessesPage() {
               icon={<Search className="h-4 w-4" />}
             />
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <select
               value={industryFilter}
               onChange={(e) => setIndustryFilter(e.target.value)}

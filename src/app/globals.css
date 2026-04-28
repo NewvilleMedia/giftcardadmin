@@ -78,24 +78,20 @@
 }
 
 /* Base Styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 40%, #faf5ff 100%);
-  background-attachment: fixed;
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  body {
+    background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 40%, #faf5ff 100%);
+    background-attachment: fixed;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 /* Glassmorphism Classes */

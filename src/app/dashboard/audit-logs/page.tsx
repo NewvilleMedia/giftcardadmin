@@ -335,14 +335,14 @@ export default function AuditLogsPage() {
       className="space-y-6"
     >
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Audit Logs</h1>
           <p className="mt-1 text-sm text-gray-500">
             Track all administrative actions and system events.
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
             <label className="text-sm text-gray-600">Auto-refresh</label>
             <button
@@ -458,7 +458,7 @@ export default function AuditLogsPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
             <div>
               <label className="mb-1.5 block text-sm font-medium text-gray-700">
                 Action Type
@@ -718,7 +718,7 @@ export default function AuditLogsPage() {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sm text-gray-500">
             Showing page {page} of {totalPages} ({totalLogs.toLocaleString()} total
             logs)
@@ -778,7 +778,7 @@ export default function AuditLogsPage() {
         {selectedLog && (
           <div className="space-y-5">
             {/* Basic Info */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
                   Timestamp
@@ -894,7 +894,7 @@ export default function AuditLogsPage() {
 
             {/* Before / After */}
             {(selectedLog.before || selectedLog.after) && (
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {selectedLog.before && (
                   <div>
                     <p className="text-xs font-medium uppercase tracking-wider text-red-500 mb-2">

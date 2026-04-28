@@ -409,7 +409,7 @@ export default function CampaignsPage() {
             />
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             <select
               value={statusFilter}
               onChange={(e) => {
@@ -587,7 +587,7 @@ export default function CampaignsPage() {
 
         {/* ---- Pagination ---- */}
         {!loading && campaigns.length > 0 && (
-          <div className="flex items-center justify-between border-t border-gray-200 bg-gray-50 px-6 py-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-gray-200 bg-gray-50 px-4 sm:px-6 py-3">
             <p className="text-sm text-gray-500">
               Page <span className="font-medium">{page}</span> of{" "}
               <span className="font-medium">{totalPages}</span>{" "}
@@ -697,7 +697,7 @@ export default function CampaignsPage() {
                   <Gift className="h-4 w-4 text-indigo-500" />
                   Gift Card Details
                 </h4>
-                <dl className="grid grid-cols-2 gap-2 text-sm">
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                   <div className="flex justify-between">
                     <dt className="text-gray-500">Card Name</dt>
                     <dd className="font-medium text-gray-900">{selectedCampaign.giftCard.name}</dd>
@@ -796,7 +796,7 @@ export default function CampaignsPage() {
                 <BarChart3 className="h-4 w-4 text-indigo-500" />
                 Recipient Stats
               </h4>
-              <div className="grid grid-cols-5 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {[
                   { label: "Total", value: getRecipientCount(selectedCampaign), color: "text-gray-900" },
                   { label: "Sent", value: getSentCount(selectedCampaign), color: "text-blue-600" },
