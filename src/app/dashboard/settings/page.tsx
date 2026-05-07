@@ -103,8 +103,8 @@ function Toggle({
       <button
         type="button"
         onClick={onToggle}
-        className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
-          enabled ? "bg-indigo-600" : "bg-gray-200"
+        className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 ${
+          enabled ? "bg-green-800" : "bg-gray-200"
         }`}
       >
         <span
@@ -368,7 +368,7 @@ export default function SettingsPage() {
           animate={{ opacity: 1 }}
           className="flex flex-col items-center gap-3"
         >
-          <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+          <Loader2 className="h-8 w-8 animate-spin text-green-800" />
           <p className="text-sm text-gray-500">Loading settings...</p>
         </motion.div>
       </div>
@@ -405,7 +405,7 @@ export default function SettingsPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex whitespace-nowrap items-center gap-2 md:gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                   activeTab === tab.id
-                    ? "bg-indigo-50 text-indigo-700"
+                    ? "bg-green-50 text-green-900"
                     : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 }`}
               >
@@ -430,7 +430,7 @@ export default function SettingsPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Globe className="h-5 w-5 text-indigo-600" />
+                      <Globe className="h-5 w-5 text-green-800" />
                       General Settings
                     </CardTitle>
                   </CardHeader>
@@ -471,7 +471,7 @@ export default function SettingsPage() {
                         onChange={(e) =>
                           setGeneral({ ...general, defaultCurrency: e.target.value })
                         }
-                        className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                        className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
                       >
                         {currencies.map((c) => (
                           <option key={c} value={c}>
@@ -500,7 +500,7 @@ export default function SettingsPage() {
                               commissionRate: parseFloat(e.target.value) || 0,
                             })
                           }
-                          className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-12 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                          className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-12 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
                         />
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
                           <span className="text-sm">%</span>
@@ -532,7 +532,7 @@ export default function SettingsPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-indigo-600" />
+                      <Shield className="h-5 w-5 text-green-800" />
                       Security Settings
                     </CardTitle>
                   </CardHeader>
@@ -557,7 +557,7 @@ export default function SettingsPage() {
                                 maxLoginAttempts: parseInt(e.target.value) || 5,
                               })
                             }
-                            className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                            className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
                           />
                         </div>
                       </div>
@@ -580,7 +580,7 @@ export default function SettingsPage() {
                                 lockoutDuration: parseInt(e.target.value) || 30,
                               })
                             }
-                            className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                            className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
                           />
                         </div>
                       </div>
@@ -675,7 +675,7 @@ export default function SettingsPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Bell className="h-5 w-5 text-indigo-600" />
+                      <Bell className="h-5 w-5 text-green-800" />
                       Notification Settings
                     </CardTitle>
                   </CardHeader>
@@ -753,7 +753,7 @@ export default function SettingsPage() {
                               adminAlertThreshold: parseFloat(e.target.value) || 0,
                             })
                           }
-                          className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                          className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
                         />
                       </div>
                     </div>
@@ -782,7 +782,7 @@ export default function SettingsPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Plug className="h-5 w-5 text-indigo-600" />
+                      <Plug className="h-5 w-5 text-green-800" />
                       Integrations
                     </CardTitle>
                   </CardHeader>
@@ -797,8 +797,8 @@ export default function SettingsPage() {
                         description="Payment processing and subscription management"
                         connected={integrations.stripe}
                         icon={
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-50">
-                            <DollarSign className="h-5 w-5 text-purple-600" />
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50">
+                            <DollarSign className="h-5 w-5 text-emerald-800" />
                           </div>
                         }
                       />
@@ -860,7 +860,7 @@ export default function SettingsPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Wrench className="h-5 w-5 text-indigo-600" />
+                      <Wrench className="h-5 w-5 text-green-800" />
                       Maintenance Actions
                     </CardTitle>
                   </CardHeader>
@@ -947,7 +947,7 @@ export default function SettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Megaphone className="h-5 w-5 text-indigo-600" />
+            <Megaphone className="h-5 w-5 text-green-800" />
             Broadcast Notification
           </CardTitle>
         </CardHeader>
@@ -977,7 +977,7 @@ export default function SettingsPage() {
                     target: e.target.value as BroadcastForm["target"],
                   })
                 }
-                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
               >
                 <option value="all">All Users</option>
                 <option value="users">Individual Users Only</option>
@@ -997,7 +997,7 @@ export default function SettingsPage() {
               }
               placeholder="Enter notification message..."
               rows={4}
-              className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 resize-none"
+              className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700 resize-none"
             />
           </div>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-gray-100 pt-4">

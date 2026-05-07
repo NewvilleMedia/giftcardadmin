@@ -492,7 +492,7 @@ export default function PromoCodesPage() {
       <div>
         <label className="mb-1.5 block text-sm font-medium text-gray-700">Description</label>
         <textarea
-          className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+          className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
           rows={3}
           placeholder="Brief description of this promo code..."
           value={formData.description}
@@ -507,7 +507,7 @@ export default function PromoCodesPage() {
           <select
             value={formData.discountType}
             onChange={(e) => updateField("discountType", e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
           >
             <option value="percentage">Percentage</option>
             <option value="fixed">Fixed Amount</option>
@@ -599,8 +599,8 @@ export default function PromoCodesPage() {
           role="switch"
           aria-checked={formData.isActive}
           onClick={() => updateField("isActive", !formData.isActive)}
-          className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
-            formData.isActive ? "bg-indigo-600" : "bg-gray-200"
+          className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 ${
+            formData.isActive ? "bg-green-800" : "bg-gray-200"
           }`}
         >
           <span
@@ -645,8 +645,8 @@ export default function PromoCodesPage() {
         <motion.div variants={itemVariants}>
           <Card className="p-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                <Tag className="h-5 w-5 text-indigo-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-50">
+                <Tag className="h-5 w-5 text-green-800" />
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-500">Total Promo Codes</p>
@@ -687,8 +687,8 @@ export default function PromoCodesPage() {
         <motion.div variants={itemVariants}>
           <Card className="p-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-50">
-                <BarChart3 className="h-5 w-5 text-purple-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50">
+                <BarChart3 className="h-5 w-5 text-emerald-800" />
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-500">Total Uses</p>
@@ -752,8 +752,8 @@ export default function PromoCodesPage() {
                   setIncludeExpired((v) => !v);
                   setPage(1);
                 }}
-                className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
-                  includeExpired ? "bg-indigo-600" : "bg-gray-200"
+                className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 ${
+                  includeExpired ? "bg-green-800" : "bg-gray-200"
                 }`}
               >
                 <span
@@ -781,7 +781,7 @@ export default function PromoCodesPage() {
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="flex flex-col items-center gap-3">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-indigo-200 border-t-indigo-600" />
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-green-200 border-t-green-800" />
               <p className="text-sm text-gray-500">Loading promo codes...</p>
             </div>
           </div>
@@ -868,7 +868,7 @@ export default function PromoCodesPage() {
                             <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
                               <motion.div
                                 className={`h-full rounded-full ${
-                                  usagePercent(promo) >= 90 ? "bg-red-500" : "bg-indigo-500"
+                                  usagePercent(promo) >= 90 ? "bg-red-500" : "bg-green-700"
                                 }`}
                                 initial={{ width: 0 }}
                                 animate={{ width: `${usagePercent(promo)}%` }}

@@ -347,8 +347,8 @@ export default function AuditLogsPage() {
             <label className="text-sm text-gray-600">Auto-refresh</label>
             <button
               onClick={() => setAutoRefresh(!autoRefresh)}
-              className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
-                autoRefresh ? "bg-indigo-600" : "bg-gray-200"
+              className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 ${
+                autoRefresh ? "bg-green-800" : "bg-gray-200"
               }`}
             >
               <span
@@ -378,8 +378,8 @@ export default function AuditLogsPage() {
         >
           <Card className="p-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                <FileText className="h-5 w-5 text-indigo-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-50">
+                <FileText className="h-5 w-5 text-green-800" />
               </div>
               <div>
                 <p className="text-sm text-gray-500">Total Logs</p>
@@ -469,7 +469,7 @@ export default function AuditLogsPage() {
                   setFilters({ ...filters, action: e.target.value });
                   setPage(1);
                 }}
-                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
               >
                 {actionOptions.map((opt) => (
                   <option key={opt} value={opt}>
@@ -488,7 +488,7 @@ export default function AuditLogsPage() {
                   setFilters({ ...filters, resourceType: e.target.value });
                   setPage(1);
                 }}
-                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
               >
                 {resourceTypeOptions.map((opt) => (
                   <option key={opt} value={opt}>
@@ -518,7 +518,7 @@ export default function AuditLogsPage() {
                     setFilters({ ...filters, startDate: e.target.value });
                     setPage(1);
                   }}
-                  className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
                 />
               </div>
             </div>
@@ -537,7 +537,7 @@ export default function AuditLogsPage() {
                     setFilters({ ...filters, endDate: e.target.value });
                     setPage(1);
                   }}
-                  className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                  className="block w-full rounded-lg border border-gray-300 bg-white py-2 pl-10 pr-3 text-sm text-gray-900 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
                 />
               </div>
             </div>
@@ -589,7 +589,7 @@ export default function AuditLogsPage() {
         <CardContent className="p-0">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-green-800" />
             </div>
           ) : logs.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-20 text-gray-500">
@@ -747,7 +747,7 @@ export default function AuditLogsPage() {
                   onClick={() => setPage(p as number)}
                   className={`inline-flex h-8 w-8 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                     page === p
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-green-800 text-white"
                       : "text-gray-600 hover:bg-gray-100"
                   }`}
                 >
@@ -840,8 +840,8 @@ export default function AuditLogsPage() {
               </p>
               {selectedLog.user ? (
                 <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100">
-                    <User className="h-4 w-4 text-indigo-600" />
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-green-100">
+                    <User className="h-4 w-4 text-green-800" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-900">

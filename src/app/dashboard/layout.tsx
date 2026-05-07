@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
-import { Menu, Gift } from "lucide-react";
+import { Menu } from "lucide-react";
 
 export default function DashboardLayout({
   children,
@@ -24,10 +24,12 @@ export default function DashboardLayout({
 
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50">
+      <div className="flex min-h-screen items-center justify-center bg-white">
         <div className="flex flex-col items-center gap-4">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-indigo-600 border-t-transparent" />
-          <p className="text-sm text-gray-500">Loading dashboard...</p>
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-green-800 border-t-transparent" />
+          <p className="text-xs uppercase tracking-[0.15em] text-gray-500 font-semibold">
+            Loading dashboard
+          </p>
         </div>
       </div>
     );
@@ -38,28 +40,26 @@ export default function DashboardLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Sidebar isMobileOpen={isMobileOpen} onMobileClose={() => setIsMobileOpen(false)} />
 
       {/* Mobile top bar */}
-      <div className="fixed top-0 left-0 right-0 h-14 bg-white/80 backdrop-blur-sm border-b border-gray-200/80 flex items-center px-4 z-20 lg:hidden">
+      <div className="fixed top-0 left-0 right-0 z-20 flex h-14 items-center border-b border-gray-200 bg-white px-4 lg:hidden">
         <button
           onClick={() => setIsMobileOpen(true)}
-          className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          className="rounded-lg p-2 transition-colors hover:bg-gray-100"
         >
           <Menu className="h-5 w-5 text-gray-700" />
         </button>
         <div className="ml-3 flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600">
-            <Gift className="h-3.5 w-3.5 text-white" />
-          </div>
-          <span className="font-semibold text-gray-900 text-sm">GiftIt Admin</span>
+          <span className="leaf-logo" />
+          <span className="text-sm font-bold tracking-tight text-gray-900">GiftIt Admin</span>
         </div>
       </div>
 
-      <div className="pt-14 lg:pt-0 lg:pl-64">
+      <div className="pt-14 lg:pt-0 lg:pl-[248px]">
         <Header />
-        <main className="p-4 sm:p-6">{children}</main>
+        <main className="px-6 sm:px-10 py-8 sm:py-10 max-w-[1400px]">{children}</main>
       </div>
     </div>
   );

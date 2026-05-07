@@ -60,7 +60,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               iconElement && "pl-10",
               error
                 ? "border-red-300 focus:border-red-500 focus:ring-red-500/20"
-                : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500/20",
+                : "border-gray-300 focus:border-green-700 focus:ring-green-700/20",
               "disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500",
               className
             )}

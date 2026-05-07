@@ -301,7 +301,7 @@ function ViewUserModal({ user, open, onClose }: { user: User | null; open: boole
   return (
     <Modal open={open} onClose={onClose} title="User Details" size="lg">
       <div className="flex items-center gap-4 mb-6 pb-6 border-b border-gray-100">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-100 text-xl font-bold text-indigo-600">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-xl font-bold text-green-800">
           {getInitials(user.firstName, user.lastName)}
         </div>
         <div>
@@ -392,7 +392,7 @@ function EditUserModal({
           <select
             value={role}
             onChange={(e) => setRole(e.target.value)}
-            className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
           >
             <option value="user">User</option>
             <option value="business">Business</option>
@@ -462,7 +462,7 @@ function BanUserModal({
               onChange={(e) => setReason(e.target.value)}
               placeholder="Enter the reason for banning this user..."
               rows={3}
-              className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
               required
             />
           </div>
@@ -579,7 +579,7 @@ function Pagination({
               onClick={() => onPageChange(p)}
               className={`flex h-8 w-8 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                 p === page
-                  ? "bg-indigo-600 text-white"
+                  ? "bg-green-800 text-white"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
             >
@@ -768,7 +768,7 @@ export default function UsersPage() {
       {/* Stats row */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0 }}>
-          <StatCard icon={Users} label="Total Users" value={stats.total} color="bg-indigo-500" />
+          <StatCard icon={Users} label="Total Users" value={stats.total} color="bg-green-700" />
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
           <StatCard icon={UserCheck} label="Active Users" value={stats.active} color="bg-green-500" />
@@ -777,7 +777,7 @@ export default function UsersPage() {
           <StatCard icon={UserX} label="Banned Users" value={stats.banned} color="bg-red-500" />
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
-          <StatCard icon={Shield} label="Admin Users" value={stats.admins} color="bg-purple-500" />
+          <StatCard icon={Shield} label="Admin Users" value={stats.admins} color="bg-emerald-700" />
         </motion.div>
       </div>
 
@@ -797,7 +797,7 @@ export default function UsersPage() {
             <select
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
             >
               <option value="all">All Roles</option>
               <option value="user">User</option>
@@ -808,7 +808,7 @@ export default function UsersPage() {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
             >
               <option value="all">All Status</option>
               <option value="active">Active</option>
@@ -837,7 +837,7 @@ export default function UsersPage() {
                 <tr>
                   <td colSpan={7} className="py-20 text-center">
                     <div className="flex flex-col items-center gap-3">
-                      <Loader2 className="h-8 w-8 animate-spin text-indigo-500" />
+                      <Loader2 className="h-8 w-8 animate-spin text-green-700" />
                       <p className="text-sm text-gray-500">Loading users...</p>
                     </div>
                   </td>
@@ -867,7 +867,7 @@ export default function UsersPage() {
                         {/* User cell */}
                         <td className="whitespace-nowrap px-6 py-4">
                           <div className="flex items-center gap-3">
-                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-600">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-green-100 text-sm font-semibold text-green-800">
                               {getInitials(user.firstName, user.lastName)}
                             </div>
                             <div>

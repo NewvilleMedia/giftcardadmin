@@ -467,10 +467,10 @@ export default function GiftCardsPage() {
         className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
       >
         {[
-          { label: "Total Gift Cards", value: stats.total, icon: CreditCard, color: "text-indigo-600 bg-indigo-50" },
+          { label: "Total Gift Cards", value: stats.total, icon: CreditCard, color: "text-green-800 bg-green-50" },
           { label: "Active Cards", value: stats.active, icon: CheckCircle, color: "text-green-600 bg-green-50" },
           { label: "Featured Cards", value: stats.featured, icon: Star, color: "text-yellow-600 bg-yellow-50" },
-          { label: "Categories", value: stats.categories, icon: Tag, color: "text-purple-600 bg-purple-50" },
+          { label: "Categories", value: stats.categories, icon: Tag, color: "text-emerald-800 bg-emerald-50" },
         ].map((stat) => (
           <motion.div key={stat.label} variants={itemVariants}>
             <Card className="flex items-center gap-4">
@@ -511,7 +511,7 @@ export default function GiftCardsPage() {
                 setCategory(e.target.value);
                 setPage(1);
               }}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
             >
               {CATEGORIES.map((cat) => (
                 <option key={cat} value={cat}>
@@ -527,7 +527,7 @@ export default function GiftCardsPage() {
                 setProvider(e.target.value as (typeof PROVIDERS)[number]);
                 setPage(1);
               }}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
             >
               {PROVIDERS.map((p) => (
                 <option key={p} value={p}>
@@ -543,7 +543,7 @@ export default function GiftCardsPage() {
                 setActiveFilter(e.target.value as (typeof ACTIVE_FILTERS)[number]);
                 setPage(1);
               }}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
             >
               <option value="all">All Status</option>
               <option value="active">Active</option>
@@ -571,7 +571,7 @@ export default function GiftCardsPage() {
         <Card className="overflow-hidden !p-0">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-green-800" />
               <span className="ml-3 text-sm text-gray-500">Loading gift cards...</span>
             </div>
           ) : error ? (
@@ -717,7 +717,7 @@ export default function GiftCardsPage() {
                           <div className="flex items-center justify-end gap-2">
                             <button
                               onClick={() => openEditModal(card)}
-                              className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-indigo-50 hover:text-indigo-600"
+                              className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-green-50 hover:text-green-800"
                               title="Edit"
                             >
                               <Edit3 className="h-4 w-4" />
@@ -786,7 +786,7 @@ export default function GiftCardsPage() {
                         onClick={() => setPage(pageNum)}
                         className={`flex h-8 w-8 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                           page === pageNum
-                            ? "bg-indigo-600 text-white"
+                            ? "bg-green-800 text-white"
                             : "text-gray-600 hover:bg-gray-100"
                         }`}
                       >
@@ -835,7 +835,7 @@ export default function GiftCardsPage() {
                 value={editForm.description}
                 onChange={(e) => setEditForm((f) => ({ ...f, description: e.target.value }))}
                 rows={3}
-                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
               />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -846,7 +846,7 @@ export default function GiftCardsPage() {
                 <select
                   value={editForm.category}
                   onChange={(e) => setEditForm((f) => ({ ...f, category: e.target.value }))}
-                  className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                  className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
                 >
                   {CATEGORIES.filter((c) => c !== "All").map((cat) => (
                     <option key={cat} value={cat}>{cat}</option>
@@ -910,7 +910,7 @@ export default function GiftCardsPage() {
                   type="checkbox"
                   checked={editForm.isAvailable}
                   onChange={(e) => setEditForm((f) => ({ ...f, isAvailable: e.target.checked }))}
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 rounded border-gray-300 text-green-800 focus:ring-green-700"
                 />
                 Available
               </label>
@@ -919,7 +919,7 @@ export default function GiftCardsPage() {
                   type="checkbox"
                   checked={editForm.featured}
                   onChange={(e) => setEditForm((f) => ({ ...f, featured: e.target.checked }))}
-                  className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  className="h-4 w-4 rounded border-gray-300 text-green-800 focus:ring-green-700"
                 />
                 Featured
               </label>
@@ -958,8 +958,8 @@ export default function GiftCardsPage() {
         <div className="flex flex-col items-center text-center">
           {syncing ? (
             <>
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-indigo-50">
-                <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
+                <Loader2 className="h-8 w-8 animate-spin text-green-800" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900">Syncing...</h3>
               <p className="mt-1 text-sm text-gray-500">

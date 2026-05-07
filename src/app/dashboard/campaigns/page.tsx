@@ -343,8 +343,8 @@ export default function CampaignsPage() {
         <motion.div variants={itemVariants}>
           <Card className="p-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50">
-                <Megaphone className="h-5 w-5 text-indigo-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-50">
+                <Megaphone className="h-5 w-5 text-green-800" />
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-500">Total Campaigns</p>
@@ -371,8 +371,8 @@ export default function CampaignsPage() {
         <motion.div variants={itemVariants}>
           <Card className="p-5">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-purple-50">
-                <CheckCircle2 className="h-5 w-5 text-purple-600" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50">
+                <CheckCircle2 className="h-5 w-5 text-emerald-800" />
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-500">Completed</p>
@@ -416,7 +416,7 @@ export default function CampaignsPage() {
                 setStatusFilter(e.target.value);
                 setPage(1);
               }}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
             >
               {STATUS_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -431,7 +431,7 @@ export default function CampaignsPage() {
                 setTypeFilter(e.target.value);
                 setPage(1);
               }}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm transition-colors focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
             >
               {TYPE_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -463,7 +463,7 @@ export default function CampaignsPage() {
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <div className="flex flex-col items-center gap-3">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-indigo-200 border-t-indigo-600" />
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-green-200 border-t-green-800" />
               <p className="text-sm text-gray-500">Loading campaigns...</p>
             </div>
           </div>
@@ -537,7 +537,7 @@ export default function CampaignsPage() {
                         </div>
                         <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
                           <motion.div
-                            className="h-full rounded-full bg-indigo-500"
+                            className="h-full rounded-full bg-green-700"
                             initial={{ width: 0 }}
                             animate={{ width: `${budgetPercent(campaign)}%` }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -648,7 +648,7 @@ export default function CampaignsPage() {
               {/* Campaign Info */}
               <div className="rounded-lg border border-gray-200 p-4">
                 <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                  <Megaphone className="h-4 w-4 text-indigo-500" />
+                  <Megaphone className="h-4 w-4 text-green-700" />
                   Campaign Info
                 </h4>
                 <dl className="space-y-2 text-sm">
@@ -676,7 +676,7 @@ export default function CampaignsPage() {
               {/* Business Info */}
               <div className="rounded-lg border border-gray-200 p-4">
                 <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                  <Users className="h-4 w-4 text-indigo-500" />
+                  <Users className="h-4 w-4 text-green-700" />
                   Business
                 </h4>
                 <dl className="space-y-2 text-sm">
@@ -694,7 +694,7 @@ export default function CampaignsPage() {
             {selectedCampaign.giftCard && (
               <div className="rounded-lg border border-gray-200 p-4">
                 <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                  <Gift className="h-4 w-4 text-indigo-500" />
+                  <Gift className="h-4 w-4 text-green-700" />
                   Gift Card Details
                 </h4>
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
@@ -714,7 +714,7 @@ export default function CampaignsPage() {
             {selectedCampaign.schedule && (
               <div className="rounded-lg border border-gray-200 p-4">
                 <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                  <Calendar className="h-4 w-4 text-indigo-500" />
+                  <Calendar className="h-4 w-4 text-green-700" />
                   Schedule
                 </h4>
                 <dl className="space-y-2 text-sm">
@@ -748,7 +748,7 @@ export default function CampaignsPage() {
             {/* ---- Budget Breakdown ---- */}
             <div className="rounded-lg border border-gray-200 p-4">
               <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                <DollarSign className="h-4 w-4 text-indigo-500" />
+                <DollarSign className="h-4 w-4 text-green-700" />
                 Budget Breakdown
               </h4>
               <dl className="space-y-2 text-sm">
@@ -781,7 +781,7 @@ export default function CampaignsPage() {
                 </div>
                 <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-gray-100">
                   <motion.div
-                    className="h-full rounded-full bg-indigo-500"
+                    className="h-full rounded-full bg-green-700"
                     initial={{ width: 0 }}
                     animate={{ width: `${budgetPercent(selectedCampaign)}%` }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -793,14 +793,14 @@ export default function CampaignsPage() {
             {/* ---- Recipient Stats ---- */}
             <div className="rounded-lg border border-gray-200 p-4">
               <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                <BarChart3 className="h-4 w-4 text-indigo-500" />
+                <BarChart3 className="h-4 w-4 text-green-700" />
                 Recipient Stats
               </h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {[
                   { label: "Total", value: getRecipientCount(selectedCampaign), color: "text-gray-900" },
                   { label: "Sent", value: getSentCount(selectedCampaign), color: "text-blue-600" },
-                  { label: "Delivered", value: getDeliveredCount(selectedCampaign), color: "text-indigo-600" },
+                  { label: "Delivered", value: getDeliveredCount(selectedCampaign), color: "text-green-800" },
                   { label: "Failed", value: selectedCampaign.recipients?.failed ?? 0, color: "text-red-600" },
                   { label: "Redeemed", value: getRedeemedCount(selectedCampaign), color: "text-green-600" },
                 ].map((stat) => (
@@ -819,7 +819,7 @@ export default function CampaignsPage() {
             {selectedCampaign.approval && (
               <div className="rounded-lg border border-gray-200 p-4">
                 <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                  <CheckCircle2 className="h-4 w-4 text-indigo-500" />
+                  <CheckCircle2 className="h-4 w-4 text-green-700" />
                   Approval
                 </h4>
                 <dl className="space-y-2 text-sm">
@@ -870,7 +870,7 @@ export default function CampaignsPage() {
             {/* ---- Dates ---- */}
             <div className="rounded-lg border border-gray-200 p-4">
               <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
-                <Clock className="h-4 w-4 text-indigo-500" />
+                <Clock className="h-4 w-4 text-green-700" />
                 Dates
               </h4>
               <dl className="space-y-2 text-sm">

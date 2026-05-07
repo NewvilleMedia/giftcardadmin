@@ -414,7 +414,7 @@ function ViewBusinessModal({
         <div className="mb-6 rounded-lg border border-gray-100 p-4">
           <p className="text-xs font-medium uppercase tracking-wider text-gray-400 mb-2">Business Owner</p>
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-600">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-green-100 text-sm font-semibold text-green-800">
               {getInitials(owner.firstName, owner.lastName)}
             </div>
             <div>
@@ -576,7 +576,7 @@ function SuspendBusinessModal({
               onChange={(e) => setReason(e.target.value)}
               placeholder="Enter the reason for suspending this business..."
               rows={3}
-              className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder-gray-400 shadow-sm focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
               required
             />
           </div>
@@ -645,7 +645,7 @@ function PaginationControl({
               onClick={() => onPageChange(p)}
               className={`flex h-8 w-8 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                 p === page
-                  ? "bg-indigo-600 text-white"
+                  ? "bg-green-800 text-white"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
             >
@@ -822,7 +822,7 @@ export default function BusinessesPage() {
       {/* Stats row */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0 }}>
-          <StatCard icon={Building2} label="Total Businesses" value={stats.total} color="bg-indigo-500" />
+          <StatCard icon={Building2} label="Total Businesses" value={stats.total} color="bg-green-700" />
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
           <StatCard icon={BadgeCheck} label="Verified" value={stats.verified} color="bg-green-500" />
@@ -851,7 +851,7 @@ export default function BusinessesPage() {
             <select
               value={industryFilter}
               onChange={(e) => setIndustryFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
             >
               <option value="all">All Industries</option>
               <option value="technology">Technology</option>
@@ -865,7 +865,7 @@ export default function BusinessesPage() {
             <select
               value={verifiedFilter}
               onChange={(e) => setVerifiedFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 shadow-sm focus:border-green-700 focus:outline-none focus:ring-1 focus:ring-green-700"
             >
               <option value="all">All Status</option>
               <option value="verified">Verified</option>
@@ -893,7 +893,7 @@ export default function BusinessesPage() {
                 <tr>
                   <td colSpan={7} className="py-20 text-center">
                     <div className="flex flex-col items-center gap-3">
-                      <Loader2 className="h-8 w-8 animate-spin text-indigo-500" />
+                      <Loader2 className="h-8 w-8 animate-spin text-green-700" />
                       <p className="text-sm text-gray-500">Loading businesses...</p>
                     </div>
                   </td>

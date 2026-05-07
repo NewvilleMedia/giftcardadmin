@@ -387,15 +387,17 @@ export default function TransactionsPage() {
     if (endDate) params.endDate = endDate;
 
     try {
-      const data = (await api.getTransactions(params)) as unknown as TransactionsResponse;
-      setTransactions(data.transactions);
-      setTotal(data.total);
-      setTotalPages(data.totalPages);
-      if (data.stats) {
-        setTotalRevenue(data.stats.totalRevenue);
-        setCompletedCount(data.stats.completed);
-        setPendingCount(data.stats.pending);
-        setRefundedCount(data.stats.refunded);
+      const raw = (await api.getTransactions(params)) as unknown as Partial<TransactionsResponse> & {
+        pagination?: { total?: number; pages?: number; page?: number; limit?: number };
+      };
+      setTransactions(raw.transactions ?? []);
+      setTotal(raw.total ?? raw.pagination?.total ?? 0);
+      setTotalPages(raw.totalPages ?? raw.pagination?.pages ?? 1);
+      if (raw.stats) {
+        setTotalRevenue(raw.stats.totalRevenue ?? 0);
+        setCompletedCount(raw.stats.completed ?? 0);
+        setPendingCount(raw.stats.pending ?? 0);
+        setRefundedCount(raw.stats.refunded ?? 0);
       }
     } catch {
       setTransactions(MOCK_TRANSACTIONS);
@@ -529,9 +531,9 @@ export default function TransactionsPage() {
         {[
           {
             label: "Total Transactions",
-            value: total.toLocaleString(),
+            value: (total ?? 0).toLocaleString(),
             icon: Receipt,
-            color: "text-indigo-600 bg-indigo-50",
+            color: "text-green-800 bg-green-50",
           },
           {
             label: "Total Revenue",
@@ -555,7 +557,7 @@ export default function TransactionsPage() {
             label: "Refunded",
             value: refundedCount.toLocaleString(),
             icon: RotateCcw,
-            color: "text-purple-600 bg-purple-50",
+            color: "text-emerald-800 bg-emerald-50",
           },
         ].map((stat) => (
           <motion.div key={stat.label} variants={itemVariants}>
@@ -601,7 +603,7 @@ export default function TransactionsPage() {
                   setTypeFilter(e.target.value as (typeof TRANSACTION_TYPES)[number]);
                   setPage(1);
                 }}
-                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
               >
                 {TRANSACTION_TYPES.map((t) => (
                   <option key={t} value={t}>
@@ -620,7 +622,7 @@ export default function TransactionsPage() {
                   setStatusFilter(e.target.value as (typeof TRANSACTION_STATUSES)[number]);
                   setPage(1);
                 }}
-                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
               >
                 {TRANSACTION_STATUSES.map((s) => (
                   <option key={s} value={s}>
@@ -640,7 +642,7 @@ export default function TransactionsPage() {
                   setStartDate(e.target.value);
                   setPage(1);
                 }}
-                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
               />
             </div>
             <div>
@@ -652,7 +654,7 @@ export default function TransactionsPage() {
                   setEndDate(e.target.value);
                   setPage(1);
                 }}
-                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-700 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
               />
             </div>
           </div>
@@ -677,7 +679,7 @@ export default function TransactionsPage() {
         <Card className="overflow-hidden !p-0">
           {loading ? (
             <div className="flex items-center justify-center py-20">
-              <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+              <Loader2 className="h-8 w-8 animate-spin text-green-800" />
               <span className="ml-3 text-sm text-gray-500">Loading transactions...</span>
             </div>
           ) : error ? (
@@ -800,7 +802,7 @@ export default function TransactionsPage() {
                             <div className="flex items-center justify-end gap-2">
                               <button
                                 onClick={() => openDetails(txn)}
-                                className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-indigo-50 hover:text-indigo-600"
+                                className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-green-50 hover:text-green-800"
                                 title="View Details"
                               >
                                 <Eye className="h-4 w-4" />
@@ -864,7 +866,7 @@ export default function TransactionsPage() {
                         onClick={() => setPage(pageNum)}
                         className={`flex h-8 w-8 items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                           page === pageNum
-                            ? "bg-indigo-600 text-white"
+                            ? "bg-green-800 text-white"
                             : "text-gray-600 hover:bg-gray-100"
                         }`}
                       >
@@ -1114,7 +1116,7 @@ export default function TransactionsPage() {
                 onChange={(e) => setRefundReason(e.target.value)}
                 placeholder="Enter the reason for this refund..."
                 rows={3}
-                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                className="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-700/20"
               />
             </div>
 

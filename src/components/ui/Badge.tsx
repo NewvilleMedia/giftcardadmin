@@ -7,14 +7,14 @@ const variantStyles = {
   danger: "bg-red-50 text-red-700 border-red-200",
   info: "bg-blue-50 text-blue-700 border-blue-200",
   default: "bg-gray-100 text-gray-700 border-gray-200",
-  purple: "bg-purple-50 text-purple-700 border-purple-200",
+  purple: "bg-emerald-50 text-emerald-900 border-emerald-200",
   // Color-based aliases for backward compatibility
   green: "bg-green-50 text-green-700 border-green-200",
   yellow: "bg-yellow-50 text-yellow-700 border-yellow-200",
   red: "bg-red-50 text-red-700 border-red-200",
   blue: "bg-blue-50 text-blue-700 border-blue-200",
   gray: "bg-gray-100 text-gray-700 border-gray-200",
-  indigo: "bg-indigo-50 text-indigo-700 border-indigo-200",
+  indigo: "bg-green-50 text-green-900 border-green-200",
   orange: "bg-orange-50 text-orange-700 border-orange-200",
 } as const;
 
@@ -24,13 +24,13 @@ const dotStyles: Record<string, string> = {
   danger: "bg-red-500",
   info: "bg-blue-500",
   default: "bg-gray-500",
-  purple: "bg-purple-500",
+  purple: "bg-emerald-700",
   green: "bg-green-500",
   yellow: "bg-yellow-500",
   red: "bg-red-500",
   blue: "bg-blue-500",
   gray: "bg-gray-500",
-  indigo: "bg-indigo-500",
+  indigo: "bg-green-700",
   orange: "bg-orange-500",
 };
 
